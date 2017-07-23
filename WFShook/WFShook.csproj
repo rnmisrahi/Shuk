@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E605CEA7-1CC0-4F92-BA3F-D7BBF9327A5C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WFShook</RootNamespace>
+    <AssemblyName>WFShook</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data.cs" />
+    <Compile Include="StoreCats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StoreCats.Designer.cs">
+      <DependentUpon>StoreCats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WordCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WordCategories.Designer.cs">
+      <DependentUpon>WordCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WordsTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WordsTest.Designer.cs">
+      <DependentUpon>WordsTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WordChallenge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WordChallenge.Designer.cs">
+      <DependentUpon>WordChallenge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stam.Designer.cs">
+      <DependentUpon>Stam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TalkletWordsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TalkletWordsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TalkletWordsDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TalkletWordsDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TalkletWordsDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TalkletWordsDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TextBoxPlaceHolder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxPlaceHolder.Designer.cs">
+      <DependentUpon>TextBoxPlaceHolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Word.cs" />
+    <Compile Include="Words.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Words.Designer.cs">
+      <DependentUpon>Words.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="StoreCats.resx">
+      <DependentUpon>StoreCats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WordCategories.resx">
+      <DependentUpon>WordCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WordsTest.resx">
+      <DependentUpon>WordsTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WordChallenge.resx">
+      <DependentUpon>WordChallenge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Stam.resx">
+      <DependentUpon>Stam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextBoxPlaceHolder.resx">
+      <DependentUpon>TextBoxPlaceHolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Words.resx">
+      <DependentUpon>Words.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TalkletWordsDataSet.xsc">
+      <DependentUpon>TalkletWordsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TalkletWordsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TalkletWordsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TalkletWordsDataSet.xss">
+      <DependentUpon>TalkletWordsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TalkletWordsDataSet1.xsc">
+      <DependentUpon>TalkletWordsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TalkletWordsDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TalkletWordsDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TalkletWordsDataSet1.xss">
+      <DependentUpon>TalkletWordsDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TalkletWordsDataSet2.xsc">
+      <DependentUpon>TalkletWordsDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TalkletWordsDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TalkletWordsDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TalkletWordsDataSet2.xss">
+      <DependentUpon>TalkletWordsDataSet2.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elephant.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
