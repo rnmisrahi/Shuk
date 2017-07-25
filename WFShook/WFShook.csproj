@@ -32,8 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Win, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,17 +54,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PicPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Results.designer.cs">
+      <DependentUpon>Results.cs</DependentUpon>
+    </Compile>
     <Compile Include="StoreCats.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StoreCats.Designer.cs">
       <DependentUpon>StoreCats.cs</DependentUpon>
     </Compile>
-    <Compile Include="WordCategories.cs">
+    <Compile Include="TestResults.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WordCategories.Designer.cs">
-      <DependentUpon>WordCategories.cs</DependentUpon>
+    <Compile Include="TestResults.Designer.cs">
+      <DependentUpon>TestResults.cs</DependentUpon>
     </Compile>
     <Compile Include="WordsTest.cs">
       <SubType>Form</SubType>
@@ -78,27 +101,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Stam.Designer.cs">
-      <DependentUpon>Stam.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TalkletWordsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TalkletWordsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TalkletWordsDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TalkletWordsDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TalkletWordsDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TalkletWordsDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="TextBoxPlaceHolder.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -106,17 +108,18 @@
       <DependentUpon>TextBoxPlaceHolder.cs</DependentUpon>
     </Compile>
     <Compile Include="Word.cs" />
-    <Compile Include="Words.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Words.Designer.cs">
-      <DependentUpon>Words.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Results.resx">
+      <DependentUpon>Results.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StoreCats.resx">
       <DependentUpon>StoreCats.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WordCategories.resx">
-      <DependentUpon>WordCategories.cs</DependentUpon>
+    <EmbeddedResource Include="TestResults.resx">
+      <DependentUpon>TestResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WordsTest.resx">
       <DependentUpon>WordsTest.cs</DependentUpon>
@@ -137,14 +140,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Stam.resx">
-      <DependentUpon>Stam.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TextBoxPlaceHolder.resx">
       <DependentUpon>TextBoxPlaceHolder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Words.resx">
-      <DependentUpon>Words.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,39 +152,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TalkletWordsDataSet.xsc">
-      <DependentUpon>TalkletWordsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TalkletWordsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TalkletWordsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TalkletWordsDataSet.xss">
-      <DependentUpon>TalkletWordsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="TalkletWordsDataSet1.xsc">
-      <DependentUpon>TalkletWordsDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="TalkletWordsDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TalkletWordsDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TalkletWordsDataSet1.xss">
-      <DependentUpon>TalkletWordsDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="TalkletWordsDataSet2.xsc">
-      <DependentUpon>TalkletWordsDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="TalkletWordsDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TalkletWordsDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TalkletWordsDataSet2.xss">
-      <DependentUpon>TalkletWordsDataSet2.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

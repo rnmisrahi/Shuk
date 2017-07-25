@@ -7,28 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WFShook
 {
     public partial class WordChallenge : Form
     {
 
-        public WordChallenge()
-        {
-            InitializeComponent();
-            cbMonths.SelectedIndex = 16;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'talkletWordsDataSet.Category' table. You can move, or remove it, as needed.
-            this.categoryTableAdapter.Fill(this.talkletWordsDataSet.Category);
-
-        }
-
-        private void btnSignup_Click(object sender, EventArgs e)
-        {
-            List<Word> categories = new List<Word> {
+        private List<Word> categories = new List<Word> {
                 new Word { Definition = "animals" },
                 new Word { Definition = "vehicles" },
                 new Word { Definition = "toys" },
@@ -42,20 +28,51 @@ namespace WFShook
                 new Word { Definition = "people" },
                 new Word { Definition = "time_words" }
             };
+
+        public WordChallenge()
+        {
+            InitializeComponent();
+            cbMonths.SelectedIndex = 16;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'talkletWordsDataSet.Category' table. You can move, or remove it, as needed.
+            ///this.categoryTableAdapter.Fill(this.AtalkletWordsDataSet.Category);
+
+        }
+
+        private void btnSignup_Click(object sender, EventArgs e)
+        {
             Categories dlg = new Categories(categories, int.Parse(cbMonths.Text));
             dlg.ShowDialog(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Stam dlg = new Stam();
-            dlg.ShowDialog(this);
+            List<Word> words;
+            Console.WriteLine("Missing Images");
+            foreach(Word category in categories)
+            {
+                words = Data.GetWordsInCategory(category.Definition);
+                Console.WriteLine("Category: " + category.Definition);
+                foreach(Word w in words)
+                {
+                    if (!File.Exists(w.Path))
+                        Console.WriteLine(w.Definition);
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            WordCategories dlg = new WordCategories();
-            dlg.Show(this);
+            new StoreCats().ShowDialog(this);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 f = new Form1();
+            f.ShowDialog(this);
         }
     }
 }

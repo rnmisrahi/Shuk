@@ -40,5 +40,7 @@ namespace WFShook
             set { _name = value; }
         }
 
+        public double Percentile { get; set; }
+
     }
 }
